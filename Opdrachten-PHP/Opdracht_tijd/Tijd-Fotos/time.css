@@ -1,0 +1,19 @@
+.morning{
+    background-image: url("morning.png");
+}
+.afternoon{
+    background-image: url("afternoon.png");
+}
+.evening{
+    background-image: url("evening.png");
+}
+.night{
+    background-image: url("night.png");
+}
+#center{
+    color: white;
+    text-align: center;
+    margin-top: 300px;
+    font-size: 45px;
+    font-family: papyrus;
+}
