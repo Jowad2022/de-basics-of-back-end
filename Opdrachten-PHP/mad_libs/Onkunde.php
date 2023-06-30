@@ -54,6 +54,7 @@
             } else {
                 $q7 = test_input($_POST["q7"]);
             }
+
         }
             function test_input($data) {
                 $data = trim($data);
