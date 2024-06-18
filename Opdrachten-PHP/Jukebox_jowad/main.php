@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    echo "<h1>Hello World</h1>";
+    echo "<h1>main page start</h1>";
     echo "date: ". date("Y-m-d"). "<br>";
     ?>
 </body>
