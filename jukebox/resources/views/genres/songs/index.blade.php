@@ -1,19 +1,20 @@
-<!-- resources/views/songs/index.blade.php -->
+<!-- resources/views/genres/songs/index.blade.php -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs per Genre</title>
-</head>
-<body>
-    <h1>Songs per Genre</h1>
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <h1>Songs for Genre: {{ $genre->name }}</h1>
     <ul>
-        @foreach ($songs as $song)
-            <li>{{ $song->title }}</li>
+        @foreach($songs as $song)
+            <li>
+                <a href="{{ route('songs.show', $song->id) }}">{{ $song->title }}</a> - {{ $song->artist }}
+            </li>
         @endforeach
     </ul>
-</body>
-</html>
+    <br>
+
+    <!-- Terugknop naar Dashboard -->
+    <a href="{{ route('dashboard') }}" class="btn btn-secondary">Terug naar Dashboard</a>
+</div>
+@endsection
