@@ -22,12 +22,14 @@
     <h2>Playlists</h2>
     <ul id="playlistList">
         @foreach($playlists as $playlist)
-            <li>
-                <a href="{{ route('playlists.show', $playlist->id) }}">{{ $playlist->name }}</a>
-                <button class="btn btn-link btn-sm text-danger delete-playlist" data-id="{{ $playlist->id }}" style="padding: 0; border: none; background: none;" onclick="confirmDelete(event)">
-                    X
-                </button>
-            </li>
+            @if($playlist->user_id === Auth::id())
+                <li>
+                    <a href="{{ route('playlists.show', $playlist->id) }}">{{ $playlist->name }}</a>
+                    <button class="btn btn-link btn-sm text-danger delete-playlist" data-id="{{ $playlist->id }}" style="padding: 0; border: none; background: none;" onclick="confirmDelete(event)">
+                        X
+                    </button>
+                </li>
+            @endif
         @endforeach
     </ul>
 

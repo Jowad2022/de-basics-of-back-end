@@ -15,6 +15,8 @@ class CreateGenreSongTable extends Migration
     {
         Schema::create('genre_song', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('genre_id')->constrained();
+            $table->foreignId('song_id')->constrained();
             $table->timestamps();
         });
     }
